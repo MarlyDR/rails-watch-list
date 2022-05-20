@@ -66,16 +66,19 @@ a {
 
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 210px;
+  width: 500px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 210px;
   object-fit: cover;
 }
 

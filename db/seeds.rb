@@ -33,7 +33,7 @@ movies["results"].each do |movie|
       title: movie["original_title"],
       rating: movie["vote_average"],
       overview: movie["overview"],
-      poster_url: movie["poster_path"]
+      poster_url: "https://image.tmdb.org/t/p/w500/#{movie['poster_path']}"
     )
 end
 

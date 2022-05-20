@@ -9,24 +9,20 @@
   </div>
 </div>
 
+<%= link_to 'Add movie', new_list_bookmark_path(@list), class: 'btn btn-light' %>
+
 <ul>
   <h2><% @list.movies.each do |movie| %></h2>
   <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-
-
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2> <%= movie.title %></h2>
-    <p><%= movie.overview %></p>
-    <p>rating: <%= movie.rating %></p>
-    <%= movie.poster_url%>
+  <div class="card-product">
+    <img src="<%= movie.poster_url %>"/>
+    <div class="card-product-infos">
+      <h2> <%= movie.title %></h2>
+      <p><%= movie.overview %></p>
+      <p>Rating: <%= movie.rating %></p>
+      <%= link_to ('<i class="fa-solid fa-trash"></i>').html_safe, bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "card-remove-link" %>
+    </div>
   </div>
-</div>
-
-
-  <%= link_to "Delete movie", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "card-remove-link" %>
   <% end %>
-</ul>
 
-<%= link_to 'Add movie', new_list_bookmark_path(@list), class: 'btn btn-secondary' %>
+</ul>
