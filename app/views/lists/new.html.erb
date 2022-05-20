@@ -1,7 +1,14 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<div class="navbar-lewagon">
+  <%= link_to 'My lists', root_path, class: "btn btn-light"  %>
+  <%= link_to 'New list', new_list_path, class: "btn btn-light"  %>
+</div>
 
-<%= simple_form_for(@list) do |f| %>
-<%= f.input :name, placeholder: 'my first list of movies'%>
-<%= f.submit %>
-<% end %>
+<div class="container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485846234645-a62644f84728?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2918);">
+  <div class="form">
+    <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name, placeholder: 'My first movies list'%>
+    <%= f.input :photo, as: :file%>
+    <%= f.submit %>
+    <% end %>
+  </div>
+</div>
